@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Física e Bem-Estar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+        .section-content {
+            margin-top: 10px;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+        .exercise-list, .program-output ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .exercise-list li, .program-output li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .program-form {
+            margin-top: 20px;
+        }
+        .program-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .program-form select,
+        .program-form input[type="button"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .program-output {
+            margin-top: 20px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .program-output h3 {
+            margin-top: 0;
+        }
+        .calendar {
+            margin-top: 20px;
+        }
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar th, .calendar td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .calendar th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .calendar td:hover {
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        function addExercise() {
+            var exerciseSelect = document.getElementById('exercise');
+            var exerciseOutput = document.getElementById('program-output');
+            var selectedExercise = exerciseSelect.options[exerciseSelect.selectedIndex].text;
+            
+            if (selectedExercise && !isInProgram(selectedExercise)) {
+                var listItem = document.createElement('li');
+                listItem.textContent = selectedExercise;
+                exerciseOutput.appendChild(listItem);
+            }
+        }
+
+        function isInProgram(exercise) {
+            var listItems = document.getElementById('program-output').getElementsByTagName('li');
+            for (var i = 0; i < listItems.length; i++) {
+                if (listItems[i].textContent === exercise) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Educação Física e Bem-Estar</h1>
+    </header>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#exercicios">Exercícios</a>
+        <a href="#bem-estar">Bem-Estar</a>
+        <a href="#motivacao">Motivação</a>
+        <a href="#programa">Montar Programa</a>
+        <a href="#calendario">Calendário</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre</h2>
+            <div class="section-content">
+                <p>Bem-vindo ao meu site sobre Educação Física e Bem-Estar! Aqui, você encontrará informações valiosas sobre como manter-se ativo e saudável, dicas de exercícios para todos os grupos musculares, conselhos de bem-estar e inspiração através de frases motivacionais.</p>
+                <p>Eu sou Hellem Coutinho, uma entusiasta da educação física, e estou aqui para ajudar você a alcançar seus objetivos de saúde e fitness de maneira eficaz e agradável.</p>
+            </div>
+        </div>
+    </section>
+    <section id="exercicios">
+        <div class="container">
+            <h2 class="section-title">Exercícios para Todos os Grupos Musculares</h2>
+            <div class="section-content">
+                <ul class="exercise-list">
+                    <li>
+                        <h3>Peito</h3>
+                        <p><strong>Supino Reto:</strong> 3 séries de 10-12 repetições. Deite-se no banco, mantenha os pés no chão e empurre a barra para cima até os braços estarem totalmente estendidos.</p>
+                        <p><strong>Supino Inclinado:</strong> 3 séries de 10-12 repetições. Deite-se em um banco inclinado e empurre a barra para cima, focando na parte superior do peito.</p>
+                        <p><strong>Flexões:</strong> 3 séries de 15 repetições. Mantenha o corpo reto e abaixe até que o peito quase toque o chão.</p>
+                    </li>
+                    <li>
+                        <h3>Costas</h3>
+                        <p><strong>Puxada na Frente:</strong> 3 séries de 10-12 repetições. Sente-se no aparelho, puxe a barra para baixo até o peito e retorne lentamente.</p>
+                        <p><strong>Remada Curvada:</strong> 3 séries de 10-12 repetições. Incline-se para frente com a barra em suas mãos, puxe a barra para o seu tronco e retorne.</p>
+                        <p><strong>Barra Fixa:</strong> 3 séries de 8-10 repetições. Puxe-se até que seu queixo esteja acima da barra.</p>
+                    </li>
+                    <li>
+                        <h3>Ombros</h3>
+                        <p><strong>Desenvolvimento com Halteres:</strong> 3 séries de 10-12 repetições. Sente-se e empurre os halteres para cima até que seus braços estejam totalmente estendidos.</p>
+                        <p><strong>Elevação Lateral:</strong> 3 séries de 12 repetições. Levante os halteres lateralmente até a altura dos ombros e retorne.</p>
+                        <p><strong>Elevação Frontal:</strong> 3 séries de 12 repetições. Levante os halteres para frente até a altura dos ombros e retorne.</p>
+                    </li>
+                    <li>
+                        <h3>Pernas</h3>
+                        <p><strong>Agachamento:</strong> 3 séries de 10-15 repetições. Mantenha os pés na largura dos ombros e abaixe-se até que suas coxas estejam paralelas ao chão.</p>
+                        <p><strong>Leg Press:</strong> 3 séries de 10-15 repetições. Empurre a plataforma para longe com os pés e retorne lentamente.</p>
+                        <p><strong>Extensão de Pernas:</strong> 3 séries de 12 repetições. Sente-se na máquina e estenda as pernas até que estejam totalmente estendidas.</p>
+                    </li>
+                    <li>
+                        <h3>Braços</h3>
+                        <p><strong>Rosca Bíceps:</strong> 3 séries de 10-12 repetições. Levante os halteres até o nível dos ombros e retorne.</p>
+                        <p><strong>Tríceps na Polia:</strong> 3 séries de 10-12 repetições. Puxe a corda para baixo até que seus braços estejam totalmente estendidos.</p>
+                        <p><strong>Mergulho:</strong> 3 séries de 10 repetições. Use barras paralelas e abaixe-se até que seus braços estejam a 90 graus.</p>
+                    </li>
+                    <li>
+                        <h3>Abdômen</h3>
+                        <p><strong>Abdominais:</strong> 3 séries de 15 repetições. Deite-se de costas e levante a parte superior do corpo em direção aos joelhos.</p>
+                        <p><strong>Prancha:</strong> 3 séries de 30-60 segundos. Mantenha o corpo reto apoiado nos antebraços e pés.</p>
+                        <p><strong>Elevação de Pernas:</strong> 3 séries de 15 repetições. Deite-se de costas e levante as pernas até a vertical.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="bem-estar">
+        <div class="container">
+            <h2 class="section-title">Dicas de Saúde e Bem-Estar</h2>
+            <div class="section-content">
+                <p>O bem-estar é fundamental para uma vida equilibrada e saudável. Além de praticar exercícios regularmente, considere as seguintes dicas para melhorar sua saúde geral:</p>
+                <ul>
+                    <li>Mantenha uma dieta equilibrada com uma variedade de nutrientes.</li>
+                    <li>Garanta de 7 a 9 horas de sono por noite para recuperação adequada.</li>
+                    <li>Hidrate-se bem, bebendo bastante água ao longo do dia.</li>
+                    <li>Encontre tempo para relaxar e descontrair, seja através de hobbies ou meditação.</li>
+                    <li>Evite o estresse excessivo e busque atividades que tragam alegria e satisfação.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="motivacao">
+        <div class="container">
+            <h2 class="section-title">Frases Motivacionais</h2>
+            <div class="section-content">
+                <p class="quote">"A única maneira de fazer um excelente trabalho é amar o que você faz." - Steve Jobs</p>
+                <p class="quote">"A dor que você sente hoje será a força que você sentirá amanhã." - Anônimo</p>
+                <p class="quote">"Nunca desista. Grandes coisas levam tempo." - Anônimo</p>
+                <p class="quote">"A diferença entre um sonho e um objetivo é a data de início." - Anônimo</p>
+                <p class="quote">"Não é sobre ser o melhor. É sobre ser melhor do que você era ontem." - Anônimo</p>
+            </div>
+        </div>
+    </section>
+    <section id="programa">
+        <div class="container">
+            <h2 class="section-title">Montar Programa de Treino</h2>
+            <div class="section-content program-form">
+                <form>
+                    <label for="exercise">Escolha um exercício:</label>
+                    <select id="exercise">
+                        <option value="peito">Peito: Supino reto, Supino inclinado, Flexões</option>
+                        <option value="costas">Costas: Puxada na frente, Remada curvada, Barra fixa</option>
+                        <option value="ombros">Ombros: Desenvolvimento com halteres, Elevação lateral, Elevação frontal</option>
+                        <option value="pernas">Pernas: Agachamento, Leg press, Extensão de pernas</option>
+                        <option value="bracos">Braços: Rosca bíceps, Tríceps na polia, Mergulho</option>
+                        <option value="abdomen">Abdômen: Abdominais, Prancha, Elevação de pernas</option>
+                    </select>
+                    <input type="button" value="Adicionar ao Programa" onclick="addExercise()">
+                </form>
+                <div class="program-output">
+                    <h3>Seu Programa de Treino:</h3>
+                    <ul id="program-output">
+                        <!-- Exercícios adicionados aparecerão aqui -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="calendario">
+        <div class="container">
+            <h2 class="section-title">Calendário de Treinos</h2>
+            <div class="section-content calendar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <div class="section-content">
+                <p>Para entrar em contato, você pode me enviar um e-mail:</p>
+                <p><strong>Hellem Coutinho</strong></p>
+                <p>Email: <a href="mailto:hellencristiny359@gmail.com">hellencristiny359@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hellem Coutinho. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
